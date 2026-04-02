@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -35,11 +35,17 @@
         width: 100%;
         z-index: 100;
         backdrop-filter: blur(6px);
-        transition: background-color 0.4s ease;
+        transition: top 0.5s ease, bottom 0.5s ease, background-color 0.4s ease;
       }
 
       .navbar.scrolled {
         background-color: rgba(0, 0, 0, 0.85);
+      }
+
+      .navbar-bottom {
+        top: auto !important;    /* unset the top */
+        bottom: 0 !important;    /* stick to bottom */
+        transform: translateY(calc(100vh - 70px)); /* 70px = navbar height */
       }
 
       .glass {
@@ -49,7 +55,6 @@
         backdrop-filter: blur(13.6px);
         -webkit-backdrop-filter: blur(13.6px);
       }
-
 
       /* Panels */
       section.panel {
@@ -62,7 +67,9 @@
         overflow: hidden;
         opacity: 0;
         transform: translateY(40px);
-        transition: opacity 1.2s ease, transform 1.2s ease;
+        transition:
+          opacity 1.2s ease,
+          transform 1.2s ease;
       }
 
       section.panel.visible {
@@ -166,7 +173,9 @@
         border-radius: 50px;
         cursor: pointer;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        transition: background 0.3s, transform 0.2s;
+        transition:
+          background 0.3s,
+          transform 0.2s;
       }
 
       #music-btn:hover {
@@ -177,6 +186,7 @@
   </head>
 
   <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
@@ -202,22 +212,12 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#about"> About </a>
+              <a class="nav-link" href="#about"> Example </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#expertise"> Expertise </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects"> Projects </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#philosophy"> Philosophy </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#advisory"> Advisory </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact"> Contact </a>
+              <button id="reveal-btn" class="btn btn-outline-light ms-2">
+                Corpo Mode
+              </button>
             </li>
           </ul>
         </div>
@@ -232,7 +232,12 @@
       <div class="overlay"></div>
       <div class="panel-content">
         <h1>dzartovs.</h1>
-        <p style="font-family: 'Courier New', Courier, monospace; padding: 5px">
+        <p
+          style="
+            font-family: &quot;Courier New&quot;, Courier, monospace;
+            padding: 5px;
+          "
+        >
           Strategy. Systems. Solutions.
         </p>
       </div>
@@ -256,7 +261,7 @@
             }
           });
         },
-        { threshold: 0.3 }
+        { threshold: 0.3 },
       );
 
       panels.forEach((panel) => observer.observe(panel));
@@ -292,6 +297,39 @@
           audio.pause();
           playing = false;
           btn.textContent = "▶️ Play Music";
+        }
+      });
+    </script>
+
+    <script>
+      const hero = document.getElementById("hero");
+      const bgBtn = document.getElementById("reveal-btn");
+      const musicBtn = document.getElementById("music-btn");
+
+      let isAltBackground = false;
+
+      bgBtn.addEventListener("click", () => {
+        if (!isAltBackground) {
+          // Change hero background to solid color
+          hero.style.backgroundColor = "#1a1a1a";  // example color
+          // Hide the video
+          const video = hero.querySelector("video");
+          if (video) video.style.display = "none";
+          // Hide the music button
+          musicBtn.style.display = "none";
+
+          bgBtn.textContent = "Hobby Mode";
+          isAltBackground = true;
+        } else {
+          // Restore original hero background
+          hero.style.backgroundColor = "";
+          const video = hero.querySelector("video");
+          if (video) video.style.display = "block";
+          // Show the music button again
+          musicBtn.style.display = "block";
+
+          bgBtn.textContent = "Corpo Mode";
+          isAltBackground = false;
         }
       });
     </script>
