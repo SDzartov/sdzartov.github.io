@@ -179,5 +179,8 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
-/assets
+/assets/!css/
+/assets/!js/
 .DS_Store
+assets/vision.mp4
+bg.jpg
