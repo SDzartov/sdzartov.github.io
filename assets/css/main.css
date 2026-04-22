@@ -15,7 +15,7 @@ font-family: "Inter", sans-serif;
 /* Navbar */
 .navbar {
 position: fixed;
-bottom: 0;
+top: 0;
 left: 0;
 width: 100%;
 z-index: 100;
@@ -25,7 +25,7 @@ transition: background-color 0.3s ease;
 }
 
 .navbar a.navbar-brand {
-    opacity: 0%;
+    opacity: 100%;
 }
 
 .navbar.scrolled a {
@@ -156,7 +156,7 @@ text-decoration: underline;
 /* Floating music button */
 #music-btn {
 position: fixed;
-top: 20px;
+bottom: 20px;
 right: 20px;
 background: #ff4081;
 border: none;
@@ -178,16 +178,31 @@ transform: scale(1.05);
 
 #my-svg {
   position: fixed;  /* keeps it in the viewport */
-  top: 15px;        /* distance from top, adjust as needed */
-  left: 15px;       /* distance from left, adjust as needed */
+  top: 60px;        /* distance from top, adjust as needed */
+  right: 15px;       /* distance from left, adjust as needed */
   width: 30px;      /* adjust size */
-  height: 30px;     /* adjust size */
+  height: 130px;     /* adjust size */
   z-index: 100000;    /* ensures it’s above other content */
   pointer-events: auto; /* optional: lets clicks pass through */
   cursor: pointer;
   fill: white;
   color: white;
 }
+
+#my-svg1 {
+  position: fixed;  /* keeps it in the viewport */
+  top: 15px;        /* distance from top, adjust as needed */
+  right: 15px;       /* distance from left, adjust as needed */
+  width: 30px;      /* adjust size */
+  height: 130px;     /* adjust size */
+  z-index: 100000;    /* ensures it’s above other content */
+  pointer-events: auto; /* optional: lets clicks pass through */
+  cursor: pointer;
+  fill: white;
+  color: white;
+}
+
+
 
 .navbar-brand.hidden {
   display: none !important;
