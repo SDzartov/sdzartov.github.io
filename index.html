@@ -3,91 +3,196 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>dzartovs.</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-     <!-- Core Reveal.js CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-    <!-- Theme (e.g., black, white, league, beige, night, serif, simple, solarized) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" </link>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/database.js"></script>
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/news.css" />
   </head>
 
   <body>
+    <div class="site">
+      <header class="site-header glass-panel">
+        <div class="brand">
+          <h1>dzartovs.</h1>
+          <p class="tagline">Strategy. Systems. Architecture.</p>
+        </div>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <a style="padding-left: 10px" class="navbar-brand" href="#"> dzartovs. </a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="#featured">Featured</a>
+          <a href="#news">News</a>
+          <a href="#events">Events</a>
+          <a href="#services">Services</a>
+          <a href="#shop">Shop</a>
+        </nav>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-          </ul>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+          </svg>
+        </a>
+      </header>
+
+      <div class="glass-panel ticker-bar">
+        <span class="ticker-label">Updates</span>
+        <div class="ticker-track">
+          <span class="ticker-content">New consulting slots open for Q3 // Platform architecture workshop — 14 July // Systems design playbook now available // Subscribe for early access to upcoming events //</span>
         </div>
       </div>
-    </nav>
 
-    <!-- Hero Panel -->
-    <section class="panel" id="hero">
-      <video autoplay muted loop playsinline>
-        <source src="./assets/bg.mp4" type="video/mp4" />
-      </video>
-      <div class="overlay"></div>
-      <div class="panel-content">
-        <a href="" target="_blank" id="svg-link1"></a>
-          <svg xmlns="http://www.w3.org/2000/svg" id="my-svg1" width="30" height="30" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-              <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-            </svg>  
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/sdzartov/" target="_blank" id="svg-link">
-          <svg xmlns="http://www.w3.org/2000/svg" id="my-svg" width="30" height="30" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-          </svg>
-        </a>
-        <h1>dzartovs.</h1>
-        <p
-          style="
-            font-family: &quot;Courier New&quot;, Courier, monospace;
-            padding: 5px;
-          "
-        >
-          Strategy. Systems. Architecture.
-        </p>
-      </div>
-      <audio id="bgm" loop>
-        <source src="./assets/audio.mp3" type="audio/mpeg" />
-      </audio>
-      <button id="music-btn">▶️ Play Music</button>
-    </section>
+      <main class="site-main">
+        <section class="glass-panel featured-panel" id="featured">
+          <div class="section-title">Featured <span>SPOTLIGHT</span></div>
+          <span class="card-tag">Strategy &amp; Infrastructure</span>
+          <h2 class="card-title">
+            <a href="#">Architecting Next-Generation Distributed Networks for Modern Systems</a>
+          </h2>
+          <p class="card-summary">
+            A structural review on replacing fragmented monolithic operations with isolated, high-performance containerized execution — and what that means for teams shipping at scale.
+          </p>
+          <a href="#" class="card-cta">Read more →</a>
+        </section>
 
-    <section class="panel" id="hero">
+        <section class="glass-panel events-timeline" id="events">
+          <div class="section-title">Events <span>UPCOMING</span></div>
 
-    </section>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-marker">
+                <span class="timeline-day">14</span>
+                <span class="timeline-month">Jul</span>
+              </div>
+              <div class="timeline-content">
+                <h3 class="item-heading"><a href="#">Platform Architecture Workshop</a></h3>
+                <p class="item-desc">Half-day session on designing resilient internal platforms. Limited seats.</p>
+                <a href="#" class="card-cta card-cta--small">Register →</a>
+              </div>
+            </article>
 
-    <!-- Footer -->
-    <!-- <footer class="footer text-center py-3 bg-dark">
-      <div class="container">
-        <p class="mb-1">
-          <a href="#hero">Back to top ↑</a>
-        </p>
-        <p class="small mb-0" style="color: white">
-          © 2025 dzartovs. All rights reserved.
-        </p>
-        <p class="small mb-0" style="color: white">
-          Designed and built by Shane D. AI content generated with Freepik @
-          https://www.freepik.com/
-        </p>
-      </div>
-    //</footer>
-    -->  
+            <article class="timeline-item">
+              <div class="timeline-marker">
+                <span class="timeline-day">02</span>
+                <span class="timeline-month">Aug</span>
+              </div>
+              <div class="timeline-content">
+                <h3 class="item-heading"><a href="#">Systems Design Office Hours</a></h3>
+                <p class="item-desc">Open Q&amp;A on cloud architecture, cost optimisation, and team topology.</p>
+                <a href="#" class="card-cta card-cta--small">Join waitlist →</a>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker">
+                <span class="timeline-day">19</span>
+                <span class="timeline-month">Aug</span>
+              </div>
+              <div class="timeline-content">
+                <h3 class="item-heading"><a href="#">Distributed Systems Meetup</a></h3>
+                <p class="item-desc">Lightning talks on observability, event-driven design, and failure modes.</p>
+                <a href="#" class="card-cta card-cta--small">Get tickets →</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <div class="content-grid">
+          <section class="glass-panel content-section" id="news">
+            <div class="section-title">News <span>LATEST</span></div>
+
+            <article class="list-item">
+              <div class="item-meta">03 Jul // OPERATIONS</div>
+              <h3 class="item-heading"><a href="#">Global Network Core Realignment Concludes Successfully</a></h3>
+            </article>
+            <article class="list-item">
+              <div class="item-meta">01 Jul // REFACTOR</div>
+              <h3 class="item-heading"><a href="#">Legacy Data Pipelines Deprecated for Parallel Async Nodes</a></h3>
+            </article>
+            <article class="list-item">
+              <div class="item-meta">28 Jun // SECURITY</div>
+              <h3 class="item-heading"><a href="#">Threat Matrix Mitigates Isolated Packet Injection Pattern</a></h3>
+            </article>
+            <article class="list-item">
+              <div class="item-meta">25 Jun // INFRA</div>
+              <h3 class="item-heading"><a href="#">Edge Cache Layer Expanded to Sub-10ms Response Targets</a></h3>
+            </article>
+          </section>
+
+          <section class="glass-panel content-section" id="services">
+              <div class="section-title">Services <span>AVAILABLE</span></div>
+
+              <article class="service-card">
+                <div class="service-header">
+                  <h3 class="service-title">Enterprise Consulting</h3>
+                  <span class="service-badge">From $2,500</span>
+                </div>
+                <p class="item-desc">High-altitude tech mapping to optimise operational blueprints and delivery roadmaps.</p>
+                <a href="#" class="card-cta card-cta--small">Enquire →</a>
+              </article>
+
+              <article class="service-card">
+                <div class="service-header">
+                  <h3 class="service-title">Cloud Systems Design</h3>
+                  <span class="service-badge">Custom</span>
+                </div>
+                <p class="item-desc">Failure-tolerant multi-region architectures with full telemetry visibility.</p>
+                <a href="#" class="card-cta card-cta--small">Enquire →</a>
+              </article>
+
+              <article class="service-card">
+                <div class="service-header">
+                  <h3 class="service-title">Platform Engineering</h3>
+                  <span class="service-badge">Retainer</span>
+                </div>
+                <p class="item-desc">Internal developer platforms with self-service provisioning and governed pipelines.</p>
+                <a href="#" class="card-cta card-cta--small">Enquire →</a>
+              </article>
+            </section>
+
+          <section class="glass-panel content-section" id="shop">
+              <div class="section-title">Shop <span>DIGITAL</span></div>
+
+              <article class="product-card">
+                <div class="product-header">
+                  <h3 class="product-title">Architecture Review Template</h3>
+                  <span class="product-price">$49</span>
+                </div>
+                <p class="item-desc">Structured checklist and doc pack for running technical design reviews.</p>
+                <a href="#" class="card-cta card-cta--small">Buy now →</a>
+              </article>
+
+              <article class="product-card">
+                <div class="product-header">
+                  <h3 class="product-title">Systems Design Playbook</h3>
+                  <span class="product-price">$29</span>
+                </div>
+                <p class="item-desc">Patterns, diagrams, and decision frameworks for modern distributed systems.</p>
+                <a href="#" class="card-cta card-cta--small">Buy now →</a>
+              </article>
+
+              <article class="product-card">
+                <div class="product-header">
+                  <h3 class="product-title">Observability Starter Kit</h3>
+                  <span class="product-price">$79</span>
+                </div>
+                <p class="item-desc">Dashboards, alert rules, and runbook templates for production workloads.</p>
+                <a href="#" class="card-cta card-cta--small">Buy now →</a>
+              </article>
+            </section>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="brand brand--footer">
+          <span class="brand-name">dzartovs.</span>
+          <span class="tagline">Strategy. Systems. Architecture.</span>
+        </div>
+        <div class="footer-meta">© 2026 dzartovs. // All rights reserved.</div>
+      </footer>
+    </div>
   </body>
 </html>
